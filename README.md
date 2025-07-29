@@ -47,9 +47,14 @@ php artisan serve
 
 ## 📦 Project screenshots
 
-<img width="1708" height="539" alt="Course list" src="https://github.com/user-attachments/assets/7f1b358c-1317-40b5-a8f6-9f1dae49f47d" />
-<img width="1771" height="779" alt="View single course" src="https://github.com/user-attachments/assets/f4dd5f8e-3ac7-49a8-a830-1a3ab3d9cf8c" />
-<img width="1634" height="760" alt="Courses table" src="https://github.com/user-attachments/assets/624705c6-5b84-4c91-990c-b1003c2bb06d" />
-<img width="1678" height="837" alt="Contents table" src="https://github.com/user-attachments/assets/d54aebbb-0879-4180-b7d2-410479fe9a70" />
-<img width="1489" height="865" alt="moduls table" src="https://github.com/user-attachments/assets/1e06a7f6-6f98-4094-acd1-0eb608aba098" />
-<img width="1718" height="754" alt="create course" src="https://github.com/user-attachments/assets/97cd031b-2c1c-4554-9755-0da1e9876418" />
+![image alt](https://github.com/shahriarsd/course-manager/blob/dev/project_images/create%20course.PNG?raw=true)
+
+![image alt](https://github.com/shahriarsd/course-manager/blob/dev/project_images/moduls%20table.PNG?raw=true)
+
+![image alt](https://github.com/shahriarsd/course-manager/blob/dev/project_images/View%20single%20course.PNG?raw=true)
+
+![image alt](https://github.com/shahriarsd/course-manager/blob/dev/project_images/Courses%20table.PNG?raw=true)
+
+![image alt](https://github.com/shahriarsd/course-manager/blob/dev/project_images/Course%20list.PNG?raw=true)
+
+![image alt](https://github.com/shahriarsd/course-manager/blob/dev/project_images/Contents%20table.PNG?raw=true)
