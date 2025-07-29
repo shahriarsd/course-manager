@@ -47,7 +47,7 @@ php artisan serve
 
 ## 📦 Project screenshots
 
-![image alt](https://github.com/shahriarsd/course-manager/blob/dev/project_images/create%20course.PNG?raw=true)
+![Image Alt](https://github.com/shahriarsd/course-manager/blob/dev/project_images/create%20course.PNG?raw=true)
 
 ![image alt](https://github.com/shahriarsd/course-manager/blob/dev/project_images/moduls%20table.PNG?raw=true)
 
@@ -58,3 +58,6 @@ php artisan serve
 ![image alt](https://github.com/shahriarsd/course-manager/blob/dev/project_images/Course%20list.PNG?raw=true)
 
 ![image alt](https://github.com/shahriarsd/course-manager/blob/dev/project_images/Contents%20table.PNG?raw=true)
+
+
+
