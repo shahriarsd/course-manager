@@ -56,9 +56,9 @@
 <body>
     <div class="container">
 
-        <a href="" class="text-info text-decoration-none mb-3 d-block">&lt; Back to Course Page</a>
-
         <h1 class="mb-4">Create a Course</h1>
+
+        <a href="{{ route('courses.index') }}" class="text-info text-decoration-none mb-3 d-block">&lt; Back to Course Page</a>
 
         @if (session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
@@ -88,9 +88,22 @@
                 </div>
             </div>
 
-            <div id="modules-container"></div>
+             <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" class="form-control" name="description" id="description" placeholder="Enter description">
+                </div>
+                <div class="col-md-6">
+                    <label for="category" class="form-label">Category</label>
+                    <input type="text" class="form-control" name="category" id="category" placeholder="Enter category">
+                </div>
+            </div>
 
             <button type="button" class="btn btn-primary mb-3" onclick="addModule()">Add Module +</button>
+
+            <div id="modules-container"></div>
+
+            <!-- <button type="button" class="btn btn-primary mb-3" onclick="addModule()">Add Module +</button> -->
 
             <div class="d-flex gap-3">
                 <button type="submit" class="btn btn-success">Save</button>
@@ -111,16 +124,18 @@
                 <button type="button" class="remove-btn" onclick="document.getElementById('module-${moduleIndex}').remove()">&times;</button>
                 <h5 class="mb-3">Module ${moduleIndex + 1}</h5>
 
+                 <button type="button" class="btn btn-sm btn-secondary mb-2" onclick="addContent(${moduleIndex})">Add Content +</button>
+
                 <div class="mb-3">
-                    <label>Module Title *</label>
+                 <label>Module Title *</label>
                     <input type="text" name="modules[${moduleIndex}][title]" class="form-control" required>
                 </div>
 
                 <div id="module-${moduleIndex}-contents"></div>
 
-                <button type="button" class="btn btn-sm btn-secondary mb-2" onclick="addContent(${moduleIndex})">Add Content +</button>
             </div>
         `;
+
             $('#modules-container').append(moduleHTML);
             moduleIndex++;
         }
@@ -131,7 +146,7 @@
             <div class="content-block">
                 <button type="button" class="remove-btn" onclick="this.closest('.content-block').remove()">&times;</button>
                 <div class="mb-2">
-                    <label>Content Title *</label>
+                <label>Content Title *</label>
                     <input type="text" name="modules[${moduleIdx}][contents][${contentCount}][title]" class="form-control" required>
                 </div>
                 <div class="mb-2">
@@ -139,7 +154,7 @@
                     <select name="modules[${moduleIdx}][contents][${contentCount}][source_type]" class="form-select" required>
                         <option value="">Choose...</option>
                         <option value="youtube">YouTube</option>
-                        <option value="vimeo">Vimeo</option>
+                        <option value="drive"> Drive</option>
                         <option value="upload">Upload</option>
                     </select>
                 </div>

@@ -10,6 +10,13 @@ use App\Models\Content;
 
 class CourseController extends Controller
 {
+
+    public function index()
+    {
+        $courses = Course::with('modules.contents')->paginate(2);
+
+        return view('courses.index', compact('courses'));
+    }
     public function create()
     {
         return view('courses.create');
@@ -20,11 +27,13 @@ class CourseController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'feature_video' => 'nullable|url',
+            'description' => 'nullable',
+            'category' => 'nullable',
             'modules' => 'nullable|array',
             'modules.*.title' => 'required|string|max:255',
             'modules.*.contents' => 'nullable|array',
             'modules.*.contents.*.title' => 'required|string|max:255',
-            'modules.*.contents.*.source_type' => 'required|string|in:youtube,vimeo,upload',
+            'modules.*.contents.*.source_type' => 'required|string',
             'modules.*.contents.*.video_url' => 'nullable|url',
             'modules.*.contents.*.video_length' => 'nullable|string',
         ]);
@@ -32,8 +41,8 @@ class CourseController extends Controller
         $course = Course::create([
             'title' => $validated['title'],
             'feature_video' => $validated['feature_video'] ?? null,
-            'description' => null,
-            'category' => null,
+            'description' => $validated['description'] ?? null,
+            'category' => $validated['category'] ?? null
         ]);
 
 
@@ -57,5 +66,11 @@ class CourseController extends Controller
         }
 
         return redirect()->back()->with('success', 'Course created successfully.');
+    }
+
+    public function show($id)
+    {
+        $course = Course::with('modules.contents')->findOrFail($id);
+        return view('courses.show', compact('course'));
     }
 }
